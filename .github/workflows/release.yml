@@ -1,4 +1,4 @@
-name: build
+name: Build
 on:
   workflow_dispatch:
     inputs:
@@ -45,6 +45,7 @@ jobs:
             mv RealiTLScanner RealiTLScanner-${{ matrix.goos }}-${{ matrix.goarch }}.exe
           else
             mv RealiTLScanner RealiTLScanner-${{ matrix.goos }}-${{ matrix.goarch }}
+          fi
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
